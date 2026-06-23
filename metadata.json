@@ -1,0 +1,6 @@
+{
+  "name": "戏游",
+  "description": "戏游 (Opera Journey) 是一款人工智能驱动的微粤剧创作与体感交互学艺平台。融合经典岭南戏曲美学，通过 Gemini API 创梦编剧、实时动作轨迹校验及声频检测，为现代梨园爱好者开启沉浸式演艺旅程。",
+  "requestFramePermissions": ["camera", "microphone"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

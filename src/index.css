@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=Manrope:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;700&family=JetBrains+Mono:wght@400;500;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Manrope", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Libre Caslon Text", serif;
+  --font-space: "Space Grotesk", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+
+  --color-backgroundTo: #1e0f0e;
+  --color-backgroundFrom: #2c1b1a;
+  --color-background: #1e0f0e;
+  --color-surface: #2c1b1a;
+  --color-surface-low: #271816;
+  --color-surface-high: #372624;
+  --color-surface-highest: #43302e;
+  --color-primary: #ffb3ac;
+  --color-primary-container: #d32f2f;
+  --color-on-primary-container: #fff2f0;
+  --color-tertiary: #84d5c5;
+  --color-tertiary-container: #267d6f;
+  --color-on-surface-variant: #e4beba;
+  --color-outline: #ab8985;
+  --color-outline-variant: #5b403d;
+  --color-on-background: #f9dcd9;
+  --color-error: #ffb4ab;
+  --color-error-container: #93000a;
+}
+
+/* Custom CSS Effects & Backgrounds */
+@keyframes shimmer {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+.gold-shimmer {
+  background: linear-gradient(90deg, #d32f2f, #ffd700, #ffb3ac, #ffd700, #d32f2f);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmer 8s linear infinite;
+}
+
+@keyframes glow-breathe {
+  0%, 100% {
+    text-shadow: 0 0 15px rgba(211, 47, 47, 0.4);
+    transform: scale(1);
+  }
+  50% {
+    text-shadow: 0 0 35px rgba(211, 47, 47, 0.8), 0 0 50px rgba(255, 215, 0, 0.3);
+    transform: scale(1.02);
+  }
+}
+
+.glow-pulse {
+  animation: glow-breathe 4s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+.floating-ui {
+  animation: float 4s ease-in-out infinite;
+}
+
+.lantern-pulse {
+  animation: pulse-red 2.5s infinite ease-in-out;
+}
+
+@keyframes pulse-red {
+  0%, 100% {
+    box-shadow: 0 0 15px #d32f2f, inset 0 0 8px #ffb3ac;
+    transform: scale(1);
+  }
+  50% {
+    box-shadow: 0 0 32px #ff5252, inset 0 0 15px #ffb3ac;
+    transform: scale(1.04);
+  }
+}
+
+/* Custom Scrollbar */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-chinese::-webkit-scrollbar {
+  width: 4px;
+}
+.scrollbar-chinese::-webkit-scrollbar-track {
+  background: #1e0f0e;
+}
+.scrollbar-chinese::-webkit-scrollbar-thumb {
+  background: #5b403d;
+  border-radius: 2px;
+}
+
+/* Pattern Overlay */
+.jade-begonia-pattern {
+  background-image: radial-gradient(circle at 10px 10px, rgba(132, 213, 197, 0.05) 2px, transparent 0);
+  background-size: 24px 24px;
+}
+
+.glass-panel {
+  background: rgba(30, 15, 14, 0.55);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(171, 137, 133, 0.2);
+}
+
+.glow-border-gold {
+  border: 1px solid transparent;
+  background-image: linear-gradient(#1e0f0e, #1e0f0e), linear-gradient(to bottom right, #ffb3ac, #ab8985);
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+}
+
+/* Red silk sweep overlay transition */
+.red-silk-overlay {
+  background: linear-gradient(135deg, #680008 0%, #ba1a20 50%, #930010 100%);
+  background-size: 200% 200%;
+}
+.red-silk-overlay::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("https://www.transparenttextures.com/patterns/silk.png");
+  opacity: 0.15;
+  mix-blend-mode: overlay;
+}
